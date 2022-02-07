@@ -1048,8 +1048,7 @@ local function AddEPControls(frame, withRecurring)
       reason = otherEditBox:GetText()
     end
     local amount = editBox:GetNumber()
-    if (not withRecurring or UnitInRaid("player")) and
-       EPGP:CanIncEPBy(reason, amount) then
+    if EPGP:CanIncEPBy(reason, amount) then
       self:Enable()
       self:SetAlpha(1)
     else
